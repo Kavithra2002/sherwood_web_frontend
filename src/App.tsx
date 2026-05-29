@@ -1027,7 +1027,7 @@ export const App: React.FC = () => {
                             ? [configuredBaseUrl]
                             : [
                                 ...(runningOnLocalhost ? [] : [""]),
-                                "http://localhost:4000",
+                                "/api",
                                 "http://localhost:4001",
                               ];
 
@@ -1338,7 +1338,7 @@ export const App: React.FC = () => {
 
     setConsultationSubmitting(true);
     try {
-      const res = await fetch("http://localhost:4000/api/users", {
+      const res = await fetch("/api/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
